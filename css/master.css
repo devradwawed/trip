@@ -1,0 +1,232 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+*{
+  font-family: 'poppins' , sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section{
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("../images/bg.jpg") , url("../images/mask.jpg");
+  background-blend-mode: screen;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+header  .logo{
+  position: relative;
+  color: #015b75;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+header .toggel{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/menu.png") ;
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+}
+header .toggel.active{
+  background-image: url("../images/close.png") ;
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.ply{
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.ply img{
+  max-width: 40px;
+
+}
+.ply span{
+  color: #015b75;
+  font-weight: 600;
+  margin-left: 10px;
+  letter-spacing: 1px;
+}
+.sci{
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.sci li{
+  list-style: none;
+}
+
+.sci li a{
+  display: inline-block;
+  text-decoration: none;
+  transform: scale(0.6);
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -o-transform: scale(0.6);
+}
+.sci li a img{
+  filter: grayscale(100%);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+.sci li a img:hover{
+  filter: grayscale(40%);
+  -webkit-filter: grayscale(40%);
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+}
+.content{
+  padding: 50px;
+}
+.content h2{
+  font-size: 9em;
+  line-height: 1em;
+  color: #015b75;
+  font-family: 'Marck Script', cursive;
+}
+.navigation{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s all;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  opacity: 0;
+  visibility: hidden;
+}
+.navigation.active{
+  opacity: 1;
+  visibility: visible;
+}
+.navigation ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navigation ul li{
+  list-style: none;
+  margin: 0 0 17px 0;
+}
+.navigation ul li a{
+  display: inline-block;
+  color: #015b75;
+  font-size: 2em;
+  text-decoration: none;
+  font-weight: 300;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.navigation ul li a:hover{
+  color: #ff286f;
+}
+
+.trailer{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  -webkit-transform:;
+  -moz-transform:;
+  -ms-transform:;
+  -o-transform:;
+  z-index: 10000;
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+.trailer.active{
+  opacity: 1;
+  visibility: visible;
+}
+.trailer video{
+  max-width: 900px;
+  outline: none;
+}
+
+.trailer .close{
+  position: absolute;
+  top: 50px;
+  right: 55px;
+  cursor: pointer;
+  max-width: 25px;
+}
+
+@media(max-width:991px){
+  section{
+
+    background-size: 200%;
+  }
+  .content h2{
+    font-size: 20vw;
+    color: #ffff;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  .trailer video{
+    max-width: 90%;
+  }
+}
